@@ -1,0 +1,13 @@
+<h3>Two way data binding Assignment</h3>
+<p>Adding an input field which updates the property via 2-way-binding.
+    Outputing the input field via string interpolation in the next line in the paragraph tag.
+    Adding a button which may only be clicked if the input field is not empty.
+    upon clicking the button the input field should be reset to empty.
+</p>
+<!-- if we need to perform more business logic then we can trigger this method-->
+<!-- <input type="text" class="form-control" [(ngModel)]="userName" (input)="onUserNameUpdate($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>username via stringInterpolation is : {{userName}}</p>
+<!-- <button class="btn btn-primary" [disabled]="userName.length < 0" (click)="onButtonClick()">Delete User</button> -->
+<p>Better solution</p>
+<button class="btn btn-primary" [disabled]="userName === ''" (click)="userName=''">Reset User</button>

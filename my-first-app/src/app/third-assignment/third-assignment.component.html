@@ -1,0 +1,18 @@
+<p>Directives Assignment</p>
+<ol>
+    <li> Add a button which says Display Details</li>
+    <li> Add a paragraph with any content of your choice</li>
+    <li> Toggle the displaying of that paragraph with the button created in first step</li>
+    <li> Log all button clicks in an array and output that array below the secret paragraph(timestamp or incrementing number)</li>
+    <li> Starting at the 5th log item, give all the future log items a blue background via (ngStyle) 
+          and white color (ngClass)
+    </li>
+</ol>
+
+<button class="btn btn-primary" (click)="toggleDisplay()">Display Detials</button>
+<p *ngIf="displayFlag;">{{displayMessage}}</p>
+<!-- <p *ngFor="let eventLog of eventLogs">{{eventLog | date:'yyyy-MM-dd HH:mm:ss'}}</p> -->
+<p *ngFor="let eventLog of eventLogs; index as i" 
+    [ngStyle]="{backgroundColor : i >= 4 ? getBackgroundColor() : 'transparent'}"
+        [ngClass]="{textColor : i >= 4 }">{{eventLog}}</p>
+
